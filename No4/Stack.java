@@ -12,6 +12,7 @@ public class Stack{
     Stack(int Size){
         this.Size = Size;
         Array = new int[Size];
+        System.out.println("Stack of "+ Size+" is created");
     }
 
     void Push(int element){
@@ -42,16 +43,18 @@ public class Stack{
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack(5);
+        Stack stack = new Stack(30);
         
         stack.Pop();
-        stack.Push(1);
         stack.Push(10);
-        stack.Push(10);
-        stack.Push(10);
-        stack.Push(11);
+        stack.Push(20);
+        stack.Push(30);
+        stack.Push(15);
+        stack.Push(9);
+        stack.Display();
         stack.Pop();
-        stack.Push(12);
+        stack.Pop();
+        stack.Pop();
         stack.Display();
 
     }
