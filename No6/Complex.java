@@ -1,24 +1,33 @@
-public class Complex{
-	add, multiply two complex numbers. 
-	private int Real;
-	private int Img;
+public class Complex {
+    private int Real;
+    private int Img;
 
-	Complex(){
-		Real = 0;
-		Img = 0;
-	}
+    public Complex(int Real, int Img) {
+        this.Real = Real;
+        this.Img = Img;
+    }
 
-	Complex(int Real, int Img){
-		this.Real = Real;
-		this.Img = Img;
-	}
+    public Complex(int Real) {
+        this.Real = Real;
+        this.Img = 0;
+    }
 
-	public void Display(){
-		System.out.println(Real + " + i" + Img);
-	}
+    public Complex() {
+        this.Real = 0;
+        this.Img = 0;
+    }
 
-	public static Complex(){
-		
-	}
+    public String getComplex() {
+        if(this.Img < 0) return Real + " - i" + Img*(-1);
+        else if (this.Img == 0) return Real + "";
+        else return  Real + " + i" + Img ;
+    }
 
+    public int getReal() {
+        return Real;
+    }
+
+    public int getImg() {
+        return Img;
+    }
 }
