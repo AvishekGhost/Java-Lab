@@ -27,4 +27,11 @@ public class Library {
             books[i].Display();
         }
     }
+    public float TotalPrice(){
+        float sum= 0;
+        for (int i = 0; i < index ; i++) {
+            sum += books[i].getPrice();
+        }
+        return sum;
+    }
 }
