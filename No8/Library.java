@@ -1,6 +1,6 @@
 public class Library {
     Book books[]= new Book[5];
-    int index = -1;
+    private int index = -1;
 
     void Add(Book src){
         if(this.index > 5) {
@@ -19,8 +19,12 @@ public class Library {
                     books[j] = books[j+1];
                 }
                 this.index--;
-            }else
-                System.out.println("Nothing to delete");
+            }
+        }
+    }
+    void Disp(){
+        for (int i = 0; i < index+1 ; i++) {
+            books[i].Display();
         }
     }
 }
