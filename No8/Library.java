@@ -12,9 +12,9 @@ public class Library {
             books[this.index] = src;
         }
     }
-    void Remove(Book src,String title){
+    void Remove(Book src){
         for(int i =0;i<this.index;i++){
-            if(books[i].getTitle() == title ){
+            if(books[i].getTitle() == src.getTitle() ){
                 for(int j = i;j<this.index;j++){
                     books[j] = books[j+1];
                 }
