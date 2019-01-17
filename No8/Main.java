@@ -20,6 +20,7 @@ public class Main {
         for(int i = 0;i<5;i++){
             book[i].Display();
         }
+        System.out.println("Total price = "+ lib.TotalPrice());
     }
 
     protected static String getSaltString() {
