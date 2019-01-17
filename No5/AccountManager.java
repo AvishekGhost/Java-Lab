@@ -9,11 +9,12 @@
 	}
 
 	public void Delete(BankAccount src){
-		for(int i =0;i<NumberOfAccounts;i++){
+		for(int i =1000;i<NumberOfAccounts;i++){
 			if(src.GetAccountNumber() == i){
 				for(int j = i;j<NumberOfAccounts;j++){
 					bankAccount[j] = bankAccount[j+1];
 				}
+				NumberOfAccounts--;
 			}
 		}
 	}
