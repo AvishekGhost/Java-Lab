@@ -7,7 +7,7 @@ public class Main {
         Dept InformationTechnology = new Dept();
         for (int i = 0; i < NumberOfEmp; i++) {
             e[i] = new Employee(RandomString(),(int)(Math.random()*10000));
-            Information Technology.Add(e[i]);
+            InformationTechnology.Add(e[i]);
         }
         System.out.println("name\tSalary\tid");
         System.out.println("================================");
