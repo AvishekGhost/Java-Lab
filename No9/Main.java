@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         int NumberOfEmp = 5;
         Employee []e = new Employee[NumberOfEmp];
-        Dept d = new Dept();
+        Dept InformationTechnology = new Dept();
         for (int i = 0; i < NumberOfEmp; i++) {
             e[i] = new Employee(RandomString(),(int)(Math.random()*10000));
-            d.Add(e[i]);
+            Information Technology.Add(e[i]);
         }
         System.out.println("name\tSalary\tid");
         System.out.println("================================");
