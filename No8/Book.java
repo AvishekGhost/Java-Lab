@@ -25,10 +25,10 @@ class Book{
 
     void Display(){
         System.out.print(title+"\t");
-        System.out.print(author[0]);
+        System.out.print(this.author[0]);
         System.out.println("\t"+ noOfPages+ "\t" + publisher+ "\t\t" + price);
         for(int i =1;i<author.length;i++) {
-            System.out.print("\t\t" + author[i]+"\n");
+            System.out.print("\t" + author[i]+"\n");
         }
         System.out.println("___________________________________________________");
     }
