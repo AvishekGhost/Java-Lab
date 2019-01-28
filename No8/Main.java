@@ -6,6 +6,8 @@ public class Main {
         Library lib = new Library();
         for(int i = 0;i<5;i++){
             int no = (int)( Math.random()*10);
+            if(no == 0) 
+                 no = 1;
             String [] auth = new String[no];
             for(int k =0; k<no;k++){
                 auth[k] = getSaltString();
