@@ -6,7 +6,7 @@ class Book{
     private String publisher;
 
     public Book(String title, String []author, int noOfPages, float price, String publisher) {
-        this.author = new String[author.length+1];
+        this.author = new String[author.length];
         this.title = title;
         for (int i =0;i< author.length;i++){
             this.author[i] = author[i];
