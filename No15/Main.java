@@ -19,7 +19,7 @@ class Circle implements Shape{
     
     @Override
     public double area(){
-        return Global.PI*r*r;
+        return Global.PI*rad*rad;
     }
     @Override
     public void move(){
