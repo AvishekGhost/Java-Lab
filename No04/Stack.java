@@ -56,6 +56,5 @@ public class Stack{
         stack.Pop();
         stack.Pop();
         stack.Display();
-
     }
 }
