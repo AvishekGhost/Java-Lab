@@ -35,5 +35,4 @@ public class Main {
         String saltStr = salt.toString();
         return saltStr;
     }
-
 }
