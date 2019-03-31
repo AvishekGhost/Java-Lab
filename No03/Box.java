@@ -24,8 +24,7 @@ public class Box{
     }
 
     public static void main(String[] args) {
-        System.out.println("GGez");
-
+       
         Box box = new Box(2, 2, 2);
         System.out.println("Volume of the Box = " + box.getVolume());
         System.out.println("Area of the Box = " + box.getArea() + "\n");
@@ -34,4 +33,5 @@ public class Box{
         System.out.println("Volume of the Box = " + box1.getVolume());
         System.out.println("Area of the Box = " + box1.getArea());
     }
+    
 }
