@@ -1,5 +1,4 @@
 public class Student{
-
     String Name;
     float Marks[] = new float[3];
 
