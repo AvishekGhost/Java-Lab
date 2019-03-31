@@ -15,5 +15,4 @@ public class Main {
         Complex temp = new Complex(src1.getReal() * src2.getReal() , src1.getImg() * src2.getImg());
         return  temp;
     }
-
 }
