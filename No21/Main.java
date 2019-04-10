@@ -1,49 +1,59 @@
-class Numbers {
-    private int count=1;
-    double getFact(){
-        double fact= 1;
-        count++;
-        for (int i = 1; i <count ; i++) {
+class Adder extends Thread{
+    int i=0;
+    int n;
+    double sum =0;
+    Adder(int n){
+        this.n = n;
+    }
+    public synchronized void run(){
+        while (true){
+            if(i==10) break;
+            i++;
+            NumGen numGen = new NumGen(i);
+            numGen.start();
+            try {
+                numGen.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            add(numGen.getFact());
+        }
+    }
+
+    void add(int fact){
+        sum +=(double) 1/fact;
+    }
+
+    void get(){
+        System.out.println("sum = " + sum);
+    }
+}
+
+class NumGen extends Thread{
+    int fact = 1;
+    int i;
+    NumGen(int i){
+        this.i = i;
+    }
+    public synchronized void run(){
+        while (i>0) {
             fact *= i;
+            i--;
         }
-        return 1/fact;
+    }
+
+    public int getFact() {
+        return fact;
     }
 }
 
-class Printer extends Thread {
-    public Numbers numbers;
-    private int limit;
-    public double sum;
 
-    Printer(Numbers numbers, int limit) {
-        this.numbers = numbers;
-        this.limit = limit;
-        this.sum = 0;
-    }
-
-    @Override
-    public void run() {
-        synchronized (numbers) {
-            for (int i = 0; i < limit/2; i++)
-                sum = sum + numbers.getFact();
-        }
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        int limit = 10;
-        Numbers numbers = new Numbers();
-        Printer even = new Printer(numbers,limit);
-        Printer odd = new Printer(numbers,limit);
-        even.start();
-        odd.start();
-        try {
-            even.join();
-            odd.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("result :" + (even.sum+ odd.sum) );
+public class Main{
+    public static void main(String[] args) throws Exception {
+        int n = 10;
+        Adder adder = new Adder(n);
+        adder.start();
+        adder.join();
+        adder.get();
     }
 }
