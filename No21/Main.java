@@ -1,13 +1,15 @@
-class Adder extends Thread{
-    int i=0;
+class Adder extends Thread {
+    int i = 0;
     int n;
-    double sum =0;
-    Adder(int n){
+    double sum = 1f;
+
+    Adder(int n) {
         this.n = n;
     }
-    public synchronized void run(){
-        while (true){
-            if(i==10) break;
+
+    public synchronized void run() {
+        while (true) {
+            if (i == 10) break;
             i++;
             NumGen numGen = new NumGen(i);
             numGen.start();
@@ -20,23 +22,25 @@ class Adder extends Thread{
         }
     }
 
-    void add(int fact){
-        sum +=(double) 1/fact;
+    void add(int fact) {
+        sum += (double) 1 / fact;
     }
 
-    void get(){
+    void get() {
         System.out.println("sum = " + sum);
     }
 }
 
-class NumGen extends Thread{
+class NumGen extends Thread {
     int fact = 1;
     int i;
-    NumGen(int i){
+
+    NumGen(int i) {
         this.i = i;
     }
-    public synchronized void run(){
-        while (i>0) {
+
+    public synchronized void run() {
+        while (i > 0) {
             fact *= i;
             i--;
         }
@@ -48,7 +52,7 @@ class NumGen extends Thread{
 }
 
 
-public class Main{
+public class Main {
     public static void main(String[] args) throws Exception {
         int n = 10;
         Adder adder = new Adder(n);
