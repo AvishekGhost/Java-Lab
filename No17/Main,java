@@ -1,0 +1,42 @@
+class Car{
+	protected boolean paid;
+	Car(boolean paid){
+		this.paid = paid;
+	}
+	boolean getStatus(){
+		return paid;
+	}
+}
+class TollBooth{
+	private float paidAmount = 0;
+	private float dueAmount = 0;
+	private int count = 0;
+	
+	void Pass(Car src){
+		count++;
+		if(src.getStatus() == true){
+			paidAmount = paidAmount + 50;
+		}
+		else{
+			dueAmount = dueAmount + 50;
+		}
+	}
+ 	@Override
+	public String toString(){
+		return "Total Cars Passed : " + count + ",\nTotal Paid Amount : "+ paidAmount +",\nTotal Due Amount : " +dueAmount;
+	}
+}
+public class Main{
+	public static void main(String [] args){
+		Car car1 = new Car(true);
+		Car car2 = new Car(false);
+		Car car3 = new Car(true);
+		
+		TollBooth tollBooth = new TollBooth();
+		
+		tollBooth.Pass(car1);
+		tollBooth.Pass(car2);
+		tollBooth.Pass(car3);
+		System.out.println(tollBooth.toString());
+	}
+}
